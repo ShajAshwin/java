@@ -12,5 +12,6 @@ public class CountNumOfDigits {
         }
 
         System.out.println("Total digit in given number is = "+count);
+        //test
     }
 }
