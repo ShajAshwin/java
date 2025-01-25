@@ -1,3 +1,5 @@
+package core;
+
 public class StringJoin {
     public static void main(String[] args) {
 
