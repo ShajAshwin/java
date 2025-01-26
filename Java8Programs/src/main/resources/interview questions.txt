@@ -1,0 +1,135 @@
+java:
+
+1. difference between interface and abstract
+2. what is inheritance
+3. how to start and stop the thread
+4. java 8 features
+5. when runtime exception will get throw and how to handle 
+6. what are all the run time exceptions & compile time exceptions
+7. internalworking of hashMap
+8. most used string methods
+9. what is optional and use
+10. what are the collections
+11. volatie keyword usage
+12. what is serializarion
+13. Why is synchronization necessary?
+14. Differentiate between the constructors and methods in Java?
+15. difference between static and final keyword
+16. Difference between String, StringBuilder, and StringBuffer.
+17. how to convert arrays to list
+18. What is encapsulation in Java?
+19. What are the steps to connect to a database in java?
+20. how to create junit
+21. how to read the file
+22. java design patterns
+23. what is singleton design patter and why it is necessary.
+24. Difference between throw and throws?
+25. how will u format the date?
+27. what is concurrent exception and how will u avoid.
+28. what is completablefuture
+29. what is predicate & suplier & consumer
+30. How will u make class is immutable.
+31. what is functional interface & usage
+32. solid principle
+33. what is stream
+34. checked exceptions & unchecked exceptions
+35. how will u customize exception
+36. can we able to use multiple catch block & without catch block with try block.
+37. types of funcational interfaces like (consumer, supplier, comparable, comparator)
+38. what is executable service
+39. how to create a new thread ? Thread class best or runnableInterface best ?
+40. what is the use of stream.sorted method ?
+41. what solid principle
+42. what is ACID properties
+43. difference between syncronized and volatile keyword
+
+spring:
+
+1. what is restapi
+2. what are all annotations you have used
+3. what is hybernate
+4. MVC works
+5. what is bean and scopes. rest api types
+7. http status code- 200, 404 & 500
+8. How to handle exceptions in Spring MVC Framework?
+9. what is rest controller annotation and what it has inside.
+10. what is Aop
+11. what is the use @Autowired annotation
+12. what are the rest api types available and explain
+13. what is service and dao
+14. difference between @requestparam and @pathvariable
+15. how to implement security in spring
+16. Internal steps during server startup in spring boot
+17. Different bean scopes with full explanation.
+18. Realtime Example of prototype bean scope, where exactly it will use.
+19. How to secure Rest End points? What is JWT token? What is OAuth?
+20. what is maven & commands ?
+21. what are all the microservice architecture ?
+22. what is profile ?
+23. what is the use of @Value annotation ?
+24. what is jdbctemplate, preparedstatement & resutset
+25. @primary , @qualifier annotation usage
+26. what is circuit breaker
+27. global exception handling
+28. microservices architecture
+29. springboot starter dependencies
+30. spring security , oauth 2.0 & jwt token
+31. Transactional annotation usage.
+32. how will u monitor metrics of microsercvices
+33. what is kafka & components in kafka
+34. @Bean vs @Component
+35. SpringIOC container & Application context
+
+
+
+Angular:
+
+1. what is databinding
+2. what is decorator and types (Class Decorators
+Property Decorators
+Method Decorators
+Parameter Decorators)
+3. what is directives
+4. pipes
+5. angular lifecycle hooks & when u use.
+6. What is String Interpolation in Angular
+7. What are Template and Reactive forms
+8. How do you share data between components in Angular
+9. how will u open dialog in angular and pass data to dialog
+10. What are RxJs in Angular
+11. What are HTTP interceptors
+12. how will implement validations in form.
+13. how will u navigate one screen to another screen.
+14. what are all the ng commands
+
+
+
+sql:
+
+1. SQL Query to find Max Salary from each department. (SELECT DeptID, MAX(Salary) FROM Employee  GROUP BY DeptID. 
+2. SQL Query to find the 4th highest salary of Employee
+3. difference between delete and truncate
+4. normalization in sql
+5. rollback
+6. procedure vs function
+
+Git:
+
+1. create branch 
+2. clone
+3. conflict
+4. PR
+5. git commands
+
+Coding:
+
+1. find the count of repeated characters in string = "asdafasfasfffafafdfaafgghh" example : { a=5, b=7, f=8, h=2}
+2. create employee object has properties like (id, age, name, department, salary), collect employee list, filter employees salary greater than 30k and group by age using java stream.
+3. format the date "MM-dd-YYYY"
+4. Convert List of string to Map object, with help of stream, should not use forEach.
+Example: List of names = [“xxx”,”yyy”, “zzz”] to Map = {1 : “xxx”, 2 : “yyy”, 3 : “zzz”}
+5. a = [a,a,b,c,d,e,e] b=[f,g,h,i,a,b,j,k] remove duplicate and combine this two array and show me the output. c= [a,b,c,d,e,f,g,h,i,j,k]
+6. input :  String[] data = new String[]{"asda", "fafaf", "sfasfas"} output : Map = {"asda":4, "fafaf":5, "sfasfas":7}
+7. find the 3 highest number in given list = [4,3,2,7,1,5,9] output is = 7
+
+

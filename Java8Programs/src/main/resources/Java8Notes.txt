@@ -1,0 +1,40 @@
+1)Parallel stream
+It meant to use multiple core of processor
+
+2)Lazy loader
+If terminal operator are not called in streams intermediate operators wont work
+intermediate operators - lazy loader
+terminal operator - eager loader
+
+what is peek()?
+it is intermediate operator. we can use it in middle of stream operation and look it. we can debug with it
+
+What is reduce()?
+It will combine elements of the stream to create a single value
+
+Short circuit operator - it will short or shrink he output of stream
+what is limit(?)?
+First ? object will be there rest will be rejected
+
+Terminal shortcircuit method - findAny(), findFirst() .get() might be needed 
+anyMatch(predicate) it is boolean(any one should match | allMatch(predicate) all the objects should match | nonMatch(predicate) no one should match
+
+Internal Working of hashmap?
+*It works on principle of hashing
+*how put method internally work
+*how Get method internally works
+
+
+What is optional?
+It is like a container. It might have value or it might be empty. it wont throw nullPointerexception since it returns container
+wraping optional with get. eg -> Optional.get() gives element if it is present else no such element exception
+but it anyway throw exception, so mostly dont use it
+
+intsted get Optional object and they try if(optional.isPresent()) to get value else return error messsage
+
+How to create it
+1)if using optional with get() or getName() it can again throw nullpointer so use Optional.ofNullable() method
+2)optional.ifPresent(success lamda) and optional.ifPresentOrElse(success lamda, failure Lamda)
+
+
+
