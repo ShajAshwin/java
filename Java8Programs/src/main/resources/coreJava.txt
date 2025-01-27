@@ -1,0 +1,78 @@
+Core Java------------
+1. Can we override main method in Java?
+We can overloaad main method, but we cannot override main method. Static methods cannot be overrided
+
+2. Use of Immutable? (or) How to create Immutable class (or) Why String is immutable in Java (or) StringBuffer vs StringBuilder
+The class must be declared as final so that child classes can’t be created.
+Data members in the class must be declared private so that direct access is not allowed.
+Data members in the class must be declared as final so that we can’t change the value of it after object creation.
+A parameterized constructor should initialize all the fields performing a deep copy so that data members can’t be modified with an object reference
+
+Why String is immutable in Java 
+For example, database username, password are passed as String to get database connection and in socket programming host and port details passed as String.
+Since String is immutable, its value can't be changed otherwise any hacker could change the referenced value to cause security issues in the application
+
+StringBuffer vs StringBuilder
+1)	StringBuffer is synchronized i.e. thread safe. It means two threads can't call the methods of StringBuffer simultaneously.	StringBuilder is non-synchronized i.e. not thread safe. It means two threads can call the methods of StringBuilder simultaneously.
+2)	StringBuffer is less efficient than StringBuilder.	StringBuilder is more efficient than StringBuffer.
+3)	StringBuffer was introduced in Java 1.0	StringBuilder was introduced in Java 1.5
+
+3. Contract between HashCode and Equals / Purpose of Hashcode and equals
+The basic rule of the contract states that if two objects are equal to each other based on equals() method, then the hash code must be the same, but if the hash code is the same, then equals() can return false
+4. Can we add object as key in HashMap?
+	Ans: Yes. But we have to override Hashcode and equals
+5. Collision handled in HashMap
+6. Custom Exception
+public class WrongFileNameException extends Exception {  
+    public WrongFileNameException(String errorMessage) {  
+    super(errorMessage);  
+    }  
+}  
+7. Inner Class
+Type	Description
+Member Inner Class	A class created within class and outside method.
+Anonymous Inner Class	A class created for implementing an interface or extending class. The java compiler decides its name.
+Local Inner Class	A class was created within the method.
+Static Nested Class	A static class was created within the class.
+Nested Interface	An interface created within class or interface.
+8. Singleton class
+9. How to make only one thread to enter method?
+	Ans: Can make synchronized/static or use synchronized block
+10. Thread life cycle
+New
+Runnable
+Blocked
+Waiting
+Timed Waiting
+Terminated
+
+11. OOPS concepts (Inheritance, Polymorphism, Abstraction[Interface,Abstract class] & Encapsulation)
+12. Checked vs Unchecked Exception
+12. throw vs throws
+13. How hashmap internally works
+14. Static Keyword (Static class and static variable, Static method->Only one thread is allowed to access the method)
+15. How to create Immutable class
+16. JDK vs JRE / WAR vs JAR
+17. Split vs Substring
+18. Serialization (Static and Transient->[Transient variable cannot be serialized])
+19. Comparator vs Comparable
+20. SOAP vs REST
+21. Hashset vs LinkedHashSet
+22. Diff between wait and sleep
+23. Methods inside the Object class
+24. Super keyword
+25. New features of Java 8 -> (Lambda, Stream API explain in detail)
+26. When finally block wont run?
+	Ans: System.Exit does not process finally block
+27. What is autoboxing?
+	Ans: Primitive to Wrapper (int to Integer) or wrapper to primitive (Integer to int)
+28. Synchronized block vs Synchronized method
+29. Generics. What is the use of '?' in generics
+30. Concurrent hashmap vs Hashmap vs Hashtable
+31. How to iterate hashmap? for loop code (or) can we add new key/value during iteration
+32. Set vs Arraylist
+33. Why static fields cannot be serialized?
+	Ans: Serialization -> Process of saving state of an object
+		 Static variable -> Not state of an object. state of a class
+34. Java 8 interface (Default Methods,Static Methods of new Java 8 interface)
+35. class loader, identity hash 	map
