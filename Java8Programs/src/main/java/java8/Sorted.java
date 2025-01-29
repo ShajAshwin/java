@@ -10,8 +10,15 @@ public class Sorted {
         List<Integer> myList = Arrays.asList(10,15,8,49,25,98,98,32,15);
 
         myList.stream()
-                .sorted(Comparator.reverseOrder())
+                .sorted((a,b) -> b-a)
                 .forEach(System.out::println);
+
+//
+//        myList.stream()
+//                .sorted((a,b) -> b-a)
+//                .mapToInt(x->x)
+//                .summaryStatistics()
+//                .getAverage();
     }
 
 }
