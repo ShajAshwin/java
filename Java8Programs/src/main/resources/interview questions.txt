@@ -1,12 +1,12 @@
 java:
 
-1. difference between interface and abstract
+1. Difference between interface and abstract
 2. what is inheritance
 3. how to start and stop the thread
 4. java 8 features
 5. when runtime exception will get throw and how to handle 
 6. what are all the run time exceptions & compile time exceptions
-7. internalworking of hashMap
+7. internal working of hashMap
 8. most used string methods
 9. what is optional and use
 10. what are the collections
@@ -35,7 +35,7 @@ java:
 34. checked exceptions & unchecked exceptions
 35. how will u customize exception
 36. can we able to use multiple catch block & without catch block with try block.
-37. types of funcational interfaces like (consumer, supplier, comparable, comparator)
+37. types of functional interfaces like (consumer, supplier, comparable, comparator)
 38. what is executable service
 39. how to create a new thread ? Thread class best or runnableInterface best ?
 40. what is the use of stream.sorted method ?
@@ -57,7 +57,7 @@ spring:
 11. what is the use @Autowired annotation
 12. what are the rest api types available and explain
 13. what is service and dao
-14. difference between @requestparam and @pathvariable
+14. difference between @Requestparam and @Pathvariable
 15. how to implement security in spring
 16. Internal steps during server startup in spring boot
 17. Different bean scopes with full explanation.
