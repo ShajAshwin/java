@@ -1,12 +1,27 @@
-Core Java------------
-1. Can we override main method in Java?
-We can overloaad main method, but we cannot override main method. Static methods cannot be overrided
+                                             ------------Core Java------------
 
-2. Use of Immutable? (or) How to create Immutable class (or) Why String is immutable in Java (or) StringBuffer vs StringBuilder
-The class must be declared as final so that child classes can’t be created.
-Data members in the class must be declared private so that direct access is not allowed.
-Data members in the class must be declared as final so that we can’t change the value of it after object creation.
-A parameterized constructor should initialize all the fields performing a deep copy so that data members can’t be modified with an object reference
+1. Can we override main method in Java?
+We can overload main method, but we cannot override main method. Static methods cannot be overriden
+❌ main cannot be overridden because it is static.
+✅ main can be hidden by redefining it in a subclass.
+✅ main can be overloaded with different parameter lists.
+
+2. Use of Immutable? (or) How to create Immutable class (or) Why String is immutable in Java
+Immutable objects are objects whose state cannot be changed after they are created. They are widely used in Java for several reasons:
+
+✅ Thread Safety – Since immutable objects cannot change, multiple threads can access them without synchronization issues.
+✅ Security – Immutable objects prevent unintended modifications, making them ideal for sensitive data.
+✅ Caching & Performance – Since their state doesn’t change, they can be safely cached and reused.
+✅ HashMap/HashSet Keys – Since hash values do not change, immutable objects work well as keys in collections like HashMap.
+
+To make a class immutable, follow these rules:
+
+Declare the class as final so it cannot be extended.
+Make all fields private and final so they cannot be modified after initialization.
+Do not provide setters to prevent modifying the fields.
+Initialize fields via a constructor and do not expose references to mutable objects.
+Return deep copies of mutable objects in getters instead of returning original references.
+
 
 Why String is immutable in Java 
 For example, database username, password are passed as String to get database connection and in socket programming host and port details passed as String.
@@ -18,7 +33,24 @@ StringBuffer vs StringBuilder
 3)	StringBuffer was introduced in Java 1.0	StringBuilder was introduced in Java 1.5
 
 3. Contract between HashCode and Equals / Purpose of Hashcode and equals
-The basic rule of the contract states that if two objects are equal to each other based on equals() method, then the hash code must be the same, but if the hash code is the same, then equals() can return false
+1. Contract Between hashCode() and equals()
+If two objects are equal (equals() returns true), they must have the same hashCode().
+This ensures correct behavior in hash-based collections.
+If two objects have the same hashCode(), they may or may not be equal.
+Different objects can have the same hash code (hash collision).
+If two objects are not equal, their hash codes should ideally be different.
+This improves performance in hash-based collections.
+2. Purpose of hashCode() and equals()
+✅ hashCode() Purpose
+Generates a unique integer representation for an object.
+Used in hash-based collections (HashMap, HashSet) for fast lookups.
+Reduces the number of equals() comparisons by first checking hash codes.
+✅ equals() Purpose
+Defines logical equality between two objects.
+Determines whether two objects should be treated as the same.
+Used in collections (Set, List) and searching operations.
+
+
 4. Can we add object as key in HashMap?
 	Ans: Yes. But we have to override Hashcode and equals
 5. Collision handled in HashMap
@@ -29,31 +61,196 @@ public class WrongFileNameException extends Exception {
     }  
 }  
 7. Inner Class
-Type	Description
-Member Inner Class	A class created within class and outside method.
-Anonymous Inner Class	A class created for implementing an interface or extending class. The java compiler decides its name.
-Local Inner Class	A class was created within the method.
-Static Nested Class	A static class was created within the class.
-Nested Interface	An interface created within class or interface.
-8. Singleton class
+Type	                        Description
+Member Inner Class	           A class created within class and outside method.
+Anonymous Inner Class	       A class created for implementing an interface or extending class. The java compiler decides its name.
+Local Inner Class	           A class was created within the method.
+Static Nested Class        	   A static class was created within the class.
+Nested Interface	           An interface created within class or interface.
+
+8. Singleton class?
+✅ Ensures a single instance – Prevents multiple objects of the same class.
+✅ Saves memory – Reduces object creation overhead.
+✅ Global access point – The same instance is accessible everywhere.
+✅ Useful in logging, database connections, caching, and configurations.
+
+class Singleton {
+    private static Singleton instance;
+
+    private Singleton() {} // Private constructor
+
+    public static Singleton getInstance() {
+        if (instance == null) {
+            instance = new Singleton();
+        }
+        return instance;
+    }
+}
+
+
 9. How to make only one thread to enter method?
-	Ans: Can make synchronized/static or use synchronized block
+Can make synchronized keyword in method signature or use synchronized block inside method if you dont want whole method to be impacted
+
+synchronized{
+             //initialization
+            }
+
+
 10. Thread life cycle
-New
-Runnable
-Blocked
-Waiting
-Timed Waiting
-Terminated
+1️⃣ New → 2️⃣ Runnable → 3️⃣ Blocked/Waiting/Timed Waiting → 4️⃣ Running → 5️⃣ Terminated
+
+1️⃣ New (Created)
+A thread is in the new state when it is created but not started yet.
+It stays in this state until .start() is called.
+eg --> Thread t1 = new Thread(() -> System.out.println("Thread running"));
+
+2️⃣ Runnable (Ready to Run)
+After calling .start(), the thread moves to the runnable state.
+The thread is waiting for CPU time from the scheduler.
+Thread t1 = new Thread(() -> System.out.println("Thread running"));
+t1.start();  // Moves to Runnable state
+
+3️⃣ Running (Executing)
+The thread is picked by the CPU and is currently executing its task.
+It remains in this state until:
+It completes execution (moves to terminated).
+It needs to wait for some resource (moves to waiting).
+Another thread gets CPU time (moves to runnable).
+
+🔹 Blocked State
+The thread is trying to access a synchronized resource that is locked by another thread.
+It waits until the lock is released.
+✔ Happens when another thread holds a synchronized lock.
+🔹 Waiting State
+The thread is waiting indefinitely until another thread notifies it.
+It moves back to runnable when notified.
+✔ Key Method: .wait()
+🔹 Timed Waiting State
+The thread waits for a fixed amount of time, then automatically resumes.
+eg --> Thread.sleep(3000);
+✔ Key Methods:
+✅ .sleep(time) → Waits for a given time.
+✅ .join(time) → Waits for another thread to complete or timeout.
+
+5️⃣ Terminated (Dead)
+The thread finishes execution or is stopped manually.
+A terminated thread cannot be restarted.
+✅ Thread ends when run() method finishes execution
+
 
 11. OOPS concepts (Inheritance, Polymorphism, Abstraction[Interface,Abstract class] & Encapsulation)
+Object-Oriented Programming (OOP) is based on four key principles:
+
+1️⃣ Encapsulation (Data Hiding)
+✔  Access Modifiers(private/protected/public/default)
+
+2️⃣ Abstraction (Hiding Implementation)
+✔ Abstract Classes (Partial abstraction)
+✔ Interfaces (Full abstraction)
+
+3️⃣ Inheritance (Code Reusability)
+🔹 Types of Inheritance in Java
+✔  Single Inheritance → One class inherits another.
+✔  Multilevel Inheritance → Class B inherits A, and Class C inherits B.
+✔  Hierarchical Inheritance → One parent has multiple child classes.
+❌ Multiple Inheritance → Not supported in Java with classes (but possible with interfaces).
+
+4️⃣ Polymorphism (Method Overloading & Overriding)
+✔ Method Overloading(Compile-time Polymorphism)
+Same method name, different parameters in the same class.
+Decided at compile time.
+
+✔ Method Overriding(Runtime Polymorphism)
+Same method name, same parameters, but different implementation in a subclass.
+Decided at runtime.
+Achieved using inheritance.
+
+
 12. Checked vs Unchecked Exception
+1️⃣ Checked Exceptions
+Definition
+Checked exceptions are exceptions that must be handled or declared in the method signature using throws.
+These exceptions are checked at compile time, meaning the compiler ensures that the exception is either caught with a try-catch block or declared to be thrown using throws.
+Examples --> IOException, SQLException, ClassNotFoundException
+
+2️⃣ Unchecked Exceptions
+Definition
+Unchecked exceptions are exceptions that are not checked at compile time, and are usually caused by programming errors.
+They are subclasses of RuntimeException.
+These exceptions do not require explicit handling; the compiler does not enforce checking.
+
+
+
 12. throw vs throws
+1️⃣ throw
+Definition
+throw is used to explicitly throw an exception in a method or block of code.
+It is followed by an instance of an exception class (either a checked or unchecked exception).
+eg ->   if (age < 18) {
+            throw new IllegalArgumentException("Age must be 18 or above.");
+        }
+
+
+2️⃣ throws
+Definition
+throws is used to declare that a method may throw one or more exceptions during its execution.
+This tells the compiler that a method might throw an exception, and the calling method needs to either handle or declare it.
+throws is used in the method signature to declare exceptions that the method might throw.
+
+
 13. How hashmap internally works
+✔ Buckets: HashMap maintains an array of "buckets" (or "slots") where key-value pairs are stored.
+✔ Hash Function: The hash function computes the hash code of the key and uses it to determine which bucket to store the entry in.
+✔ Collision Handling: When two keys hash to the same bucket, a collision occurs. HashMap handles collisions using either chaining or open addressing.
+🔹 Chaining (Linked List or Tree)
+Before Java 8: HashMap used a linked list to store multiple entries in the same bucket.
+After Java 8: HashMap improves this by converting the linked list to a balanced tree (e.g., Red-Black Tree) when the number of entries in a bucket exceeds a certain threshold (default is 8).
+
+
 14. Static Keyword (Static class and static variable, Static method->Only one thread is allowed to access the method)
+The static keyword in Java is used for memory management and allows us to create class-level variables and methods.
+When a variable or method is declared as static, it belongs to the class rather than to instances of the class.
+This means that static members can be accessed without creating an object of the class.
+
+1️⃣ Static Variables (Class Variables)
+Static variables are initialized only once, at the start of the execution.
+They are common to all instances of the class, meaning that if one instance modifies the static variable, it will reflect in all other instances.
+class MyClass {
+    static int count = 0;
+    }
+
+2️⃣ Static Methods
+A static method can only access static variables and call other static methods. It cannot access instance variables or instance methods.
+Static methods are often used for utility or helper functions that don’t depend on instance state.
+
+3️⃣ Static Blocks
+Static blocks are executed before the main method when the class is loaded for the first time.
+They are useful for initializing static variables that require complex logic.
+
+    static {
+        value = 10;  // Static initialization block
+        System.out.println("Static block executed!");
+    }
+
+4️⃣ Static Classes
+A static nested class can access only the static members (variables and methods) of the outer class.
+It does not require an instance of the outer class to be created.
+
+
 15. How to create Immutable class
-16. JDK vs JRE / WAR vs JAR
+16. JDK vs JRE/WAR vs JAR
+1️⃣ What is a JAR File?
+A JAR file is a package file format that bundles multiple files into a single archive file.
+These files could include Java class files, metadata, and resource files like images or property files.
+JAR files are typically used to package Java libraries, components, or standalone applications.
+
+2️⃣ What is a WAR File?
+A WAR file is specifically designed for packaging web applications in Java.
+It is used to bundle the entire web application, including the Java servlets, JSPs (JavaServer Pages), HTML, CSS, JavaScript, and other resources.
+
+
 17. Split vs Substring
+
 18. Serialization (Static and Transient->[Transient variable cannot be serialized])
 19. Comparator vs Comparable
 20. SOAP vs REST
