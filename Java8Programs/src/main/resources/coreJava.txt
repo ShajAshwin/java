@@ -1,4 +1,4 @@
-                                             ------------Core Java------------
+------------Core Java------------
 
 1. Can we override main method in Java?
 We can overload main method, but we cannot override main method. Static methods cannot be overriden
@@ -190,7 +190,6 @@ eg ->   if (age < 18) {
             throw new IllegalArgumentException("Age must be 18 or above.");
         }
 
-
 2️⃣ throws
 Definition
 throws is used to declare that a method may throw one or more exceptions during its execution.
@@ -250,26 +249,185 @@ It is used to bundle the entire web application, including the Java servlets, JS
 
 
 17. Split vs Substring
+1️⃣ Use split() when you need to divide a string into multiple parts based on a delimiter or pattern.
+It is suitable for situations like parsing CSV data or breaking a sentence into words.
 
-18. Serialization (Static and Transient->[Transient variable cannot be serialized])
+2️⃣ Use substring() when you need to extract a specific portion of a string by specifying start and end indices.
+It’s useful when working with known fixed-length parts or structured data in a string.
+
+18. What is Serialization?
+Serialization in Java is the process of converting an object into a byte stream so that it can be saved to a file, transmitted over a network, or stored in a database.
+The reverse process, called deserialization, reconstructs the object from the byte stream.
+
+It is mainly used when we need to:
+Save an object’s state to a file or database.
+Send objects over a network (e.g., in distributed systems).
+Store objects in cache for later retrieval.
+
+class Person implements Serializable {
+    private static final long serialVersionUID = 1L; // Recommended for versioning
+
+The serialVersionUID is a unique identifier for a class. It ensures backward compatibility during deserialization.
+If a class structure changes but the same UID is maintained, old serialized objects can still be deserialized.
+
+If serialVersionUID is not defined, Java generates one dynamically, but if the class changes (even slightly), deserialization will fail with InvalidClassException.
+
+Should You Still Use Java Serialization?
+🔴 NO → For new projects, avoid Java serialization. Use JSON, Protobuf, or Kryo instead.
+🔴 YES → If working with legacy systems that require Java serialization, ensure proper security and
+
 19. Comparator vs Comparable
+Key Differences:
+Feature	                   Comparable	                                   Comparator
+Package	                   java.lang	                                   java.util
+Implementation	           Implemented inside the class (compareTo)	       Implemented as a separate class (compare)
+Sorting Criteria	       Only one (natural ordering)	                   Multiple sorting criteria
+Modifies Class?	           ✅ Yes (class must implement Comparable)	       ❌ No (keeps sorting logic separate)
+Used in	                   Collections.sort(list)	                       Collections.sort(list, comparator)
+Java 8 Alternative	       Collections.sort(list)	                       list.sort(Comparator.comparing(...))
+Method                     compareTo() should be overrided in class        compare() Two different pojo class can be compared
+                           for Collections.sort(Employee obj) to work      Implemented as a separate class (compare) -> class NameComparator implements Comparator<Person>
+
 20. SOAP vs REST
-21. Hashset vs LinkedHashSet
-22. Diff between wait and sleep
-23. Methods inside the Object class
-24. Super keyword
-25. New features of Java 8 -> (Lambda, Stream API explain in detail)
-26. When finally block wont run?
-	Ans: System.Exit does not process finally block
-27. What is autoboxing?
-	Ans: Primitive to Wrapper (int to Integer) or wrapper to primitive (Integer to int)
-28. Synchronized block vs Synchronized method
-29. Generics. What is the use of '?' in generics
-30. Concurrent hashmap vs Hashmap vs Hashtable
-31. How to iterate hashmap? for loop code (or) can we add new key/value during iteration
-32. Set vs Arraylist
-33. Why static fields cannot be serialized?
-	Ans: Serialization -> Process of saving state of an object
-		 Static variable -> Not state of an object. state of a class
-34. Java 8 interface (Default Methods,Static Methods of new Java 8 interface)
-35. class loader, identity hash 	map
+Feature	          SOAP	                                                   REST
+Full Form	      Simple Object Access Protocol	                           Representational State Transfer
+Type	          Protocol	                                               Architectural style
+Message Format	  XML only	                                               JSON, XML, HTML, Text
+Speed	          Slower (due to XML and more processing)	               Faster (lightweight, mostly JSON)
+Security	      Built-in WS-Security, supports ACID transactions         Uses HTTPS and OAuth for security
+Statefulness	  Stateful (remembers previous requests)	               Stateless (each request is independent)
+Flexibility	      Rigid (follows strict structure)	                       Flexible (uses different data formats)
+Use Case	      Banking, Payment Gateways, Enterprise Applications	   Web services, Mobile apps, Public APIs
+
+
+
+21. Diff between wait() and sleep() in java?
+1️⃣ Key Differences
+Feature	                  wait()	                                            sleep()
+Belongs To	              Object class	                                        Thread class
+Purpose	                  Makes the thread wait and releases the monitor lock	Pauses the thread for a given time but does not release the lock
+Lock Handling	          Releases the lock	                                    Keeps the lock till sleep(100) time goes off
+Where It Is Used	      Used inside a synchronized block/method	            Can be used anywhere
+How to Resume?	          notify() or notifyAll()	                            Automatically resumes after the specified time
+Checked Exception?	      ❌ No checked exception	                            ✅ Throws InterruptedException
+Common Use Case	          Inter-thread communication	                        Temporarily pausing execution
+
+22. Methods inside the Object class
+Method	                  Description
+clone()	                  Creates a shallow copy of the object.
+equals(Object obj)	      Compares two objects for equality.
+finalize()	              Called by the Garbage Collector before an object is destroyed.
+getClass()	              Returns the runtime class of the object.
+hashCode()	              Returns the hash code (unique ID) of the object.
+toString()	              Returns a string representation of the object.
+notify()	              Wakes up one waiting thread.
+notifyAll()            	  Wakes up all waiting threads.
+wait()	                  Makes a thread wait until notify() or notifyAll() is called.
+wait(long timeout)	      Makes a thread wait for the specified time (milliseconds).
+wait(long timeout,int nanos)	Makes a thread wait for the specified time (milliseconds + nanoseconds).
+
+23. super keyword in Java
+Use Case	          Purpose
+super.variable	      Access parent class variables if they are hidden by child class variables.
+super.method()	      Call parent class methods when overridden in a child class.
+super()	              Call the parent class constructor from the child class constructor.
+
+
+24. When finally block wont run?
+The finally block is always executed after the try block, regardless of whether an exception occurs or not.
+However, there are some rare cases where the finally block will not execute.
+
+🔹 1. When System.exit(0) is Called
+If System.exit(0) is invoked inside the try or catch block, it terminates the JVM immediately, preventing finally from executing.
+public class Test {
+    public static void main(String[] args) {
+        try {
+            System.out.println("Inside try");
+            System.exit(0);  // JVM terminates here
+        } finally {
+            System.out.println("Inside finally");
+        }
+    }
+}
+
+🔹 2. When JVM Crashes (Due to Errors Like OutOfMemoryError)
+If the program runs out of memory or encounters a serious JVM error (StackOverflowError, OutOfMemoryError), the finally block may not run.
+public class Test {
+    public static void main(String[] args) {
+        try {
+            int[] arr = new int[Integer.MAX_VALUE]; // Causes OutOfMemoryError
+        } finally {
+            System.out.println("Inside finally");
+        }
+    }
+}
+
+Summary
+JVM crashes (OutOfMemoryError, StackOverflowError)
+System.exit(0)
+Process is killed externally (Ctrl+C, Task Manager, kill -9)
+Thread is forcefully stopped
+
+
+25. What is autoboxing?
+1️⃣ What is Autoboxing?
+🔹 Autoboxing is the automatic conversion of primitive data types into their corresponding wrapper class objects by the Java compiler.
+👉 Example: int → Integer, double → Double, char → Character, etc.
+
+2️⃣ Behind the Scenes (How Autoboxing Works Internally)
+Integer num = 5;
+// Internally, Java does:
+Integer num = Integer.valueOf(5);
+✅ The compiler automatically adds Integer.valueOf(5), converting 5 (int) into an Integer object
+
+
+26. Synchronized block vs Synchronized method?
+Both synchronized blocks and synchronized methods are used to control access to shared resources by multiple threads,
+but they differ in how and where the synchronization is applied.
+
+1️⃣ Synchronized Method
+A synchronized method ensures that only one thread at a time can execute the method on an
+instance of the class (for instance methods) or on the class itself (for static methods).
+
+2️⃣ Synchronized Block
+A synchronized block allows you to synchronize only a portion of code, rather than the whole method.
+You can specify the object on which the synchronization should be applied.
+synchronized (object) {
+        // Code to be synchronized
+    }
+
+27. Generics. What is the use of '?' in generics?
+Generics enable type-safe operations by allowing you to specify a class or method to work with objects of any type while providing compile-time checks.
+Instead of specifying a specific type (like String, Integer, etc.), you can use type parameters (like T, E, K, V) which can represent any object type.
+
+
+32. Why static fields cannot be serialized?
+1️⃣ Static Fields Belong to the Class, Not the Instance
+Static fields are class-level variables, meaning they belong to the class itself rather than to any individual object (instance) of the class.
+Serialization, on the other hand, works by serializing the state of an object — the instance variables that belong to that particular object.
+
+
+33. The "this" Keyword in Java?
+The this keyword in Java is a reference variable that refers to the current instance of a class.
+It is commonly used in object-oriented programming to differentiate between instance variables and parameters,
+call other constructors, and access the current object.
+
+1️⃣When the parameter names are the same as the instance variable names, this is used to distinguish between them.
+
+1.2 Calling Another Constructor (Constructor Chaining)
+this() can be used to call another constructor of the same class. This helps in constructor chaining.
+    // Constructor 1
+    public Person(String name) {
+        this(name, 0);  // Calling Constructor 2 with default age 0
+    }
+
+    // Constructor 2
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+In this case, the first constructor (Person(String name)) calls the second constructor (Person(String name, int age)) using this(name, 0).
+Cannot be used in static methods: Since this refers to an instance of a class, it cannot be used in static methods (because static methods are not bound to any instance).
+
+

@@ -1,0 +1,7 @@
+25. New features of Java 8 -> (Lambda, Stream API explain in detail)
+30. Concurrent hashmap vs Hashmap vs Hashtable
+31. How to iterate hashmap? for loop code (or) can we add new key/value during iteration
+32. Set vs Arraylist
+34. Java 8 interface (Default Methods,Static Methods of new Java 8 interface)
+35. class loader, identity hashmap
+35. class loader, identity hashmap
