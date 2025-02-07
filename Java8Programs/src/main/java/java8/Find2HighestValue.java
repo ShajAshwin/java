@@ -1,4 +1,4 @@
-package core;
+package java8;
 
 import java.util.Arrays;
 import java.util.List;
@@ -11,14 +11,14 @@ public class Find2HighestValue {
     public static void main(String[] args) {
         int numbers[] = {1,5,7,2,4,9,6};
 
-        Integer integers = Arrays.stream(numbers)
+         Arrays.stream(numbers)
                 .boxed()
                 .sorted((a,b)-> b.compareTo(a))
                 .skip(1)
-                .findFirst().get();
+                .findFirst().ifPresent(System.out::println);
 
 
-        System.out.println(integers);
+//        System.out.println(integers);
 
     }
 

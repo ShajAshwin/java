@@ -1,4 +1,4 @@
-package core;
+package java8;
 
 import java.util.Arrays;
 import java.util.function.Function;

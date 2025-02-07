@@ -4,4 +4,3 @@
 32. Set vs Arraylist
 34. Java 8 interface (Default Methods,Static Methods of new Java 8 interface)
 35. class loader, identity hashmap
-35. class loader, identity hashmap

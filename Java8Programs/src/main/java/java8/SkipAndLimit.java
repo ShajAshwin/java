@@ -1,4 +1,4 @@
-package core;
+package java8;
 
 import java.util.stream.IntStream;
 
@@ -7,7 +7,7 @@ public class SkipAndLimit {
 
         IntStream.range(1,10)
                 .skip(2)
-                .limit(8)
+                .limit(5)
                 .forEach(s-> System.out.print(s+" "));
     }
 }

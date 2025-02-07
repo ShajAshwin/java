@@ -1,4 +1,4 @@
-package core;
+package java8;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -13,17 +13,11 @@ public class CountRepeatingChar {
         String line = "cloudysunday";
 
         String lineArray[] = line.split("");
-
-
         Map<String, Long> map = new HashMap<>();
-
 
                 map = Arrays.stream(lineArray)
                 .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
-
-
-
-        System.out.println(map);
+                System.out.println(map);
 
 //Another method
 

@@ -401,13 +401,13 @@ Generics enable type-safe operations by allowing you to specify a class or metho
 Instead of specifying a specific type (like String, Integer, etc.), you can use type parameters (like T, E, K, V) which can represent any object type.
 
 
-32. Why static fields cannot be serialized?
+28. Why static fields cannot be serialized?
 1️⃣ Static Fields Belong to the Class, Not the Instance
 Static fields are class-level variables, meaning they belong to the class itself rather than to any individual object (instance) of the class.
 Serialization, on the other hand, works by serializing the state of an object — the instance variables that belong to that particular object.
 
 
-33. The "this" Keyword in Java?
+29. The "this" Keyword in Java?
 The this keyword in Java is a reference variable that refers to the current instance of a class.
 It is commonly used in object-oriented programming to differentiate between instance variables and parameters,
 call other constructors, and access the current object.
@@ -429,5 +429,25 @@ this() can be used to call another constructor of the same class. This helps in 
 
 In this case, the first constructor (Person(String name)) calls the second constructor (Person(String name, int age)) using this(name, 0).
 Cannot be used in static methods: Since this refers to an instance of a class, it cannot be used in static methods (because static methods are not bound to any instance).
+
+
+30.what is Marker interface? why?
+A Marker Interface in Java is an interface that has no methods or fields—it
+serves as a tag or marker to indicate some special behavior to the Java runtime or compiler.
+
+Why Use a Marker Interface?
+Marker interfaces are used to indicate that a class has a special property so that certain Java mechanisms
+or frameworks can recognize and process these classes differently.
+They are mainly used for runtime type identification.
+
+Examples of Marker Interfaces in Java
+1.Serializable (java.io.Serializable)
+      Marks a class as serializable so that its objects can be converted into a byte stream.
+2.Cloneable (java.lang.Cloneable)
+      Marks a class as cloneable so that the Object.clone() method can be used.
+3.Remote (java.rmi.Remote)
+      Marks a class as a remote object for RMI (Remote Method Invocation).
+
+
 
 

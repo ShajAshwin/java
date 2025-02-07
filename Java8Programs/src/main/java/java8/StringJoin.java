@@ -1,4 +1,4 @@
-package core;
+package java8;
 
 public class StringJoin {
     public static void main(String[] args) {
