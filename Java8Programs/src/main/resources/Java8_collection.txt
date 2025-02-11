@@ -1,3 +1,237 @@
+1️⃣ Lambda Expressions
+1)What is a lambda expression in Java 8?
+A lambda expression is a concise way to represent an anonymous function (a function without a name).
+It allows writing functional-style code by eliminating boilerplate code like anonymous classes.
+
+() -> System.out.println("Hello, Lambda!");
+
+
+2).Can lambda expressions access instance and static variables?
+Yes, lambda expressions can access:
+✅ Instance variables (non-static fields)
+✅ Static variables (class-level fields)
+
+Lambda expressions can access and modify instance variables because they belong to the object.
+Lambda expressions can read local variables, but cannot modify them unless they are effectively final.
+However, local variables (inside methods) must be effectively final.
+
+🔹 Why Does This Restriction Exist?
+Local variables in a method live on the stack, whereas lambda expressions may run in a different thread.
+If lambdas were allowed to modify local variables, unexpected behavior could occur due to concurrency issues.
+✅ Solution: Use instance or static variables instead of modifying local variables.
+
+
+3).What is the difference between anonymous classes and lambda expressions?
+Both anonymous classes and lambda expressions allow you to create objects without defining a separate class,
+but there are key differences.
+
+ When to Use What?
+Scenario	                            Use Anonymous Class	         Use Lambda Expression
+Need multiple methods	                ✅ Yes	                     ❌ No (Only for functional interfaces)
+Need to extend a class	                ✅ Yes	                     ❌ No
+Need cleaner, concise syntax            ❌ No	                     ✅ Yes
+Using this to refer to anonymous class	✅ Yes	                     ❌ No
+
+
+
+4)Can we pass multiple statements in a lambda expression?
+✅ Yes! A lambda expression can contain multiple statements inside a block ({}).
+
+// Single statement, no need for {}
+MathOperation add = (a, b) -> a + b;
+System.out.println(add.operate(5, 3)); // Output: 8
+
+//Multiple Statements
+MathOperation operation = (a, b) -> {
+            System.out.println("Performing operation on: " + a + " and " + b);
+            int result = a + b;
+            return result; // Explicit return required
+        };
+
+
+
+2️⃣ Functional Interfaces
+1)What is a functional interface? Give examples.
+A functional interface is an interface that contains exactly one abstract method
+but can have multiple default and static methods.
+
+@FunctionalInterface
+interface MathOperation {
+    int operate(int a, int b);
+}
+
+
+2)How is the @FunctionalInterface annotation useful?
+The @FunctionalInterface annotation in Java ensures that an interface follows the rules of a functional interface (i.e., it has exactly one abstract method).
+It helps prevent accidental method additions that would break lambda expressions.
+
+
+3)What are the predefined functional interfaces in java.util.function package?
+2️⃣ Predicate<T> – Tests a Condition | boolean test(T t)
+3️⃣ Function<T, R> – Transforms Input to Output | R apply(T t)
+4️⃣ Consumer<T> – Performs an Action Without Returning a Value | void accept(T t)
+5️⃣ Supplier<T> – Supplies a Value Without Taking Input | T get()
+6️⃣ UnaryOperator<T> – Transforms a Value (Same Input & Output Type) | T apply(T t)
+7️⃣ BinaryOperator<T> – Combines Two Values (Same Type) | T apply(T t1, T t2)
+and bi Functional interface
+
+
+2)What is the difference between Function<T, R> and BiFunction<T, U, R>?
+In addition to single-parameter functional interfaces, Java 8 also provides bi-functional interfaces that take two arguments.
+These are useful when we need to process two input values instead of just one.
+*Bi-functional interfaces extend the power of functional programming by handling two input values.
+*They are commonly used in Streams, Collections, and data processing.
+*BinaryOperator<T> is a special case of BiFunction<T, U, R> where both inputs and outputs are the same type.
+
+3️⃣ Streams API
+1)What is the Streams API in Java 8?
+The Streams API in Java 8 is a powerful feature that allows you to process collections (like Lists, Sets, and Maps) in a functional,
+declarative, and parallelizable way.
+It is part of java.util.stream and helps perform operations like filtering, mapping, sorting, and reducing efficiently.
+
+2)What is the difference between Collections and Streams?
+Collections - Stores and manages data, Supports adding, removing, and updating elements, can be iterated multiple times
+Streams     - Processes data functionally, Does not modify original data, a stream can be used only once
+
+
+3)What is the difference between intermediate and terminal operations in streams?
+1️⃣ Intermediate Operations (Lazy Evaluation)
+Intermediate operations return a new Stream and don’t execute immediately.
+They are executed only when a terminal operation is called.
+2️⃣ Terminal Operations (Eager Evaluation)
+A terminal operation triggers the execution of intermediate operations and produces a result (or a side effect like printing).
+
+
+4)What are some commonly used stream operations?
+5)How does filter() work in Streams?
+
+6)What is the difference between map() and flatMap()?
+The flatMap() function is used when each element contains a collection, and we want to flatten the nested structure into a single stream.
+flatMap() is used when each element is a collection.
+It flattens multiple lists into a single list.
+Result: A List<Integer> containing all numbers from nested lists.
+
+7)How do you sort a list using streams?
+8)How do you convert a List to a Map using streams?
+
+Map<Integer, Employee> employeeMap = employees
+                                     .stream()
+                                     .collect(Collectors.toMap(emp -> emp.id, emp -> emp));
+
+Use Case	                              Solution
+Basic conversion (List → Map)	          Collectors.toMap(keyMapper, valueMapper)
+Handling duplicate keys	                  Collectors.toMap(keyMapper, valueMapper, mergeFunction)
+Map with only specific values	          Collectors.toMap(keyMapper, nameMapper)
+Preserve insertion order	              Collectors.toMap(..., LinkedHashMap::new)
+Sorted Map (TreeMap)	                  Collectors.toMap(..., TreeMap::new)
+
+9)How do you find the first non-repeated character from a String using streams?
+using distinct() method or converting the list to a set
+
+
+4️⃣ Default and Static Methods in Interfaces
+1)What are default methods in Java 8?
+Java 8 introduced default methods in interfaces, allowing methods with a body (implementation) inside interfaces.
+This feature was added to maintain backward compatibility while still allowing new methods to be added to interfaces without breaking existing implementations.
+
+2)Can an interface have multiple default methods?
+Yes
+
+3)How does diamond problem get resolved in Java 8?
+If a class implements two interfaces with the same default method, it must override it. This is called diamond problem
+
+4)What are static methods in interfaces?
+Java 8 introduced static methods in interfaces, allowing interfaces to have methods with a body that cannot be overridden by implementing classes.
+*Cannot be overridden by implementing classes.
+*Belongs to the interface itself (not the implementing class).
+*Called using the interface name (InterfaceName.methodName()).
+*They provide utility/helper methods without needing extra utility classes.
+
+
+5️⃣ Optional Class
+1)What is Optional in Java 8? Why is it useful?
+Java 8 introduced the Optional<T> class in java.util to handle null values safely and reduce NullPointerExceptions (NPEs).
+Optional<T> is a container object that may or may not contain a non-null value.
+  *If the value is present, Optional acts as a wrapper around the value.
+  *If the value is absent, Optional avoids NullPointerException by providing safe methods to handle it.
+
+
+2)How does orElse(), orElseGet(), and orElseThrow() work in Optional?
+These methods are used to provide a value when Optional is empty (Optional.empty()).
+✅ They work with Optional.ofNullable(), which allows null values
+orElse()     -> Returns default value (evaluated always) | not lazyloader
+orElseGet()  -> Calls supplier, generates value.
+orElseThrow()-> Throws exception
+
+
+3)How can you handle NullPointerException using Optional?
+✅ Solution: Use Optional.ofNullable()
+
+
+4)How do you filter values using Optional?
+code : optionalValue.filter(value -> condition)
+-> If condition is true, it returns the same Optional<T>.
+-> If condition is false, it returns Optional.empty().
+
+
+
+6️⃣ Method References
+1)What are method references in Java 8?
+A method reference in Java 8 is a shorthand notation for writing lambda expressions when an existing method can be used directly.
+It replaces a lambda function when a method already exists
+
+
+2)What are the different types of method references?
+Type	                                             Syntax	                          Example
+1. Reference to a Static Method	                     ClassName::staticMethod	      Math::abs
+2. Reference to an Instance Method(Specific Object)	 object::instanceMethod	          System.out::println
+3. Reference to an Instance Method(Class Name)	     ClassName::instanceMethod	      String::toUpperCase
+4. Reference to a Constructor	                     ClassName::new	                  ArrayList::new
+
+
+3)What is the difference between Class::staticMethod and Object::instanceMethod?
+✅ Use Class::staticMethod for static methods
+✅ Use Object::instanceMethod for specific object instance methods
+
+
+7️⃣ Collectors and Reduction
+1)What is the use of Collectors.toList(), Collectors.toMap(), and Collectors.groupingBy()?
+2)What is the difference between collect() and reduce()?
+✔️ Use collect() when you need a List, Set, or Map
+✔️ Use reduce() when you need a single computed result (sum, product, min, max, etc.)
+
+
+3)How do you use Collectors.partitioningBy() in Java 8?
+📌 Used to partition elements into two groups (true/false) based on a predicate.
+📌 Returns a Map<Boolean, List<T>>, where:
+
+true → List of elements satisfying the condition.
+false → List of elements not satisfying the condition
+
+4)How can you perform joining strings using Collectors.joining()?
+📌 Collectors.joining() is used to concatenate elements from a Stream into a single String.
+📌 It works only on streams of String values.
+📌 Provides options for custom separators, prefixes, and suffixes.
+
+public static void main(String[] args) {
+        List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+
+        // Join names with separator, prefix, and suffix
+        String result = names.stream()
+                             .collect(Collectors.joining(", ", "[", "]"));
+
+        System.out.println(result); // ✅ Output: [Alice, Bob, Charlie]
+}
+
+
+
+
+
+
+
+
+
+
 25. New features of Java 8 -> (Lambda, Stream API explain in detail)
 30. Concurrent hashmap vs Hashmap vs Hashtable
 31. How to iterate hashmap? for loop code (or) can we add new key/value during iteration
