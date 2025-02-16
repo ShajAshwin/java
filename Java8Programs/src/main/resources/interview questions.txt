@@ -122,8 +122,8 @@ Git:
 5. git commands
 
 Coding:
-
 1. find the count of repeated characters in string = "asdafasfasfffafafdfaafgghh" example : { a=5, b=7, f=8, h=2}
+
 2. create employee object has properties like (id, age, name, department, salary), collect employee list, filter employees salary greater than 30k and group by age using java stream.
 3. format the date "MM-dd-YYYY"
 4. Convert List of string to Map object, with help of stream, should not use forEach.
