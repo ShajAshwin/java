@@ -18,7 +18,7 @@ Before Collections we had arrays, the issues with array is
    │               │               │                │             │             │
  ---------      -------     --------------        -----         -----         -----
  │   │   │      │     │     │     │      │        │   │         │   │         │   │
-AL  LL  V      PQ     AD    HS   LHS    TS       CHM  HM       TM  LHM       HT  Prop
+AL  LL   V     PQ     AD    HS   LHS    TS       CHM  HM       TM  LHM       HT  Prop
                                          (Thread-Safe Collections)
 AL → ArrayList
 LL → LinkedList

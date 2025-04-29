@@ -16,16 +16,12 @@ public class Practice {
         List<String> names = Arrays.asList("AA", "BB", "AA", "CC");
         int arr[] = { 99, 55, 203, 99, 4, 91 };
         String string = "GloomySunday";
-        Set<Integer> set = new HashSet<>();
 
-         names.stream()
-                .collect(Collectors.groupingBy(Function.identity(),LinkedHashMap::new, Collectors.counting()))
-                .entrySet().stream()
-                .filter(n -> n.getValue() == 1)
-                .map(m -> m.getKey())
-                .findFirst().ifPresent(System.out::println);
+        List<String> cr = Arrays.asList("red","yellow","blue","green");
 
-
+        cr.stream()
+                .sorted(Comparator.naturalOrder())
+                .forEach(System.out::println);
 
 
     }

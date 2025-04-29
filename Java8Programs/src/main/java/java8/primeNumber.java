@@ -19,6 +19,7 @@ public class primeNumber {
     Map<Boolean, List<Integer>> list = Arrays.stream(arr).boxed()
             .collect(Collectors.partitioningBy(num -> num % 2 == 0));
 
+
     System.out.println(list.get(true));
 
 
