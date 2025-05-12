@@ -141,11 +141,25 @@ Yes
 If a class implements two interfaces with the same default method, it must override it. This is called diamond problem
 1️⃣ Override the Method in the Class
 2️⃣ Use InterfaceName.super.method()
-   class C implements A, B {
-       @Override
-       public void show() {
-           A.super.show(); // Explicitly call A's show()
-       }
+
+interface A {
+    default void show() {
+        System.out.println("A's show");
+    }
+}
+
+interface B {
+    default void show() {
+        System.out.println("B's show");
+    }
+}
+
+class C implements A, B {
+    public void show() {
+        A.super.show(); // or B.super.show(); - you have to specify
+    }
+}
+
 
 
 4)What are static methods in interfaces?

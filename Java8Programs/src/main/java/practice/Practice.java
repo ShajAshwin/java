@@ -19,9 +19,7 @@ public class Practice {
 
         List<String> cr = Arrays.asList("red","yellow","blue","green");
 
-        cr.stream()
-                .sorted(Comparator.naturalOrder())
-                .forEach(System.out::println);
+
 
 
     }

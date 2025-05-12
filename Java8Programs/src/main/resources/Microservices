@@ -1,0 +1,21 @@
+1)What is a web service?
+It is a software system designed to support Machine to Machine interaction over a network.
+It should not be platform independent
+
+2)What makes web service platform independent?
+The request and response make it platform independent via json(or)xml
+
++-------------+         HTTP Request         +----------------+
+|             |----------------------------->|                |
+|   Consumer  |                              |  Web Service   |
+|  (Client)   |         JSON/XML             |    (Server)    |
+|             |<-----------------------------|                |
++-------------+         HTTP Response        +----------------+
+
+       |                                         |
+   Any platform                              Any platform
+ (Java, Python, etc.)                 (Java, .NET, Node.js, etc.)
+
+3)Types of web services?
+*SOAP - request and response are xml
+*REST - request and response are json

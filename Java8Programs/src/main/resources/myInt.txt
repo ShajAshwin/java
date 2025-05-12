@@ -34,7 +34,7 @@ Expected response:
 {
   "userId": 101
 }
-+
+
 Q7.What is the output of the following?
 public class Counter {
     static int count = 0;
@@ -55,5 +55,6 @@ Question: Why is the property not working? How can you fix it?
 
 Q9. You are using Feign client between Order and Payment microservices. Sometimes calls fail with 404, even though endpoints exist.
 Question: List two possible reasons and how to fix them.
+
 Q10. Two microservices update the same table in different orders. This sometimes leads to deadlocks.
 Question: How can you prevent or reduce the chance of deadlocks?
