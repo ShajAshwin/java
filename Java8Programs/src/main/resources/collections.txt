@@ -6,8 +6,8 @@ Before Collections we had arrays, the issues with array is
 
 2)Collection Hierarchy
 
-                        Iterable (interface)
-                            │
+                             Iterable (interface)
+                                     │
          ----------------------------------------------------------
          │                                                        │
      Collection(interface)                                       Map(interface)

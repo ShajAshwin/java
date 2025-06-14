@@ -47,7 +47,7 @@ spring:
 
 1. what is restapi
 2. what are all annotations you have used
-3. what is hybernate
+3. what is hibernate?
 4. MVC works
 5. what is bean and scopes. rest api types
 7. http status code- 200, 404 & 500

@@ -1,0 +1,67 @@
+Q1.What will be the output of the following code?
+Stream<String> stream = Stream.of("a", "b", "c");
+stream.peek(System.out::println).count();
+stream.forEach(System.out::println);
+a) a b c printed twice
+b) a b c printed once
+c) Runtime exception
+d) Nothing printed
+
+Q2. Which method is not part of Spring’s bean lifecycle?
+a) @PostConstruct
+b) afterPropertiesSet()
+c) destroy()
+d) initializeBean()
+
+Q3.Which HTTP status code is most appropriate when a user tries to access a resource they do not have permission to?
+a) 404
+b) 401
+c) 403
+d) 400
+
+Q4.Which Spring Cloud tool can be used for circuit breaking?
+a) Eureka
+b) Feign
+c) Resilience4j
+d) Zuul
+
+Q5. Write a method that returns the first non-empty Optional from a list. If all are empty, return Optional.empty().
+
+public static Optional<String> firstNonEmpty(List<Optional<String>> optionals) {
+    Optional o = optional.stream()
+            .filter(a->!a.isEmpty)
+            .isPresent(soutc);
+}
+
+Q6.Create a simple Spring Boot REST controller with a GET endpoint /users/{id} that returns the user ID passed in the path.
+Expected response:
+{
+  "userId": 101
+}
+
+
+Q7.What is the output of the following?
+public class Counter {
+    static int count = 0;
+    public static void main(String[] args) throws InterruptedException {
+        Runnable r = () -> {
+            for (int i = 0; i < 1000; i++)
+            count++;
+        };
+        Thread t1 = new Thread(r);
+        Thread t2 = new Thread(r);
+        t1.start(); t2.start();
+        t1.join(); t2.join();
+        System.out.println(count);
+    }
+}
+
+Q8.A developer uses the following config in application.properties, but the server still starts on port 8080.
+server.port=abcd
+Question: Why is the property not working? How can you fix it?
+
+Q9. You are using Feign client between Order and Payment microservices. Sometimes calls fail with 404, even though endpoints exist.
+Question: List two possible reasons and how to fix them.
+
+Q10. Two microservices update the same table in different orders. This sometimes leads to deadlocks.
+Question: How can you prevent or reduce the chance of deadlocks?

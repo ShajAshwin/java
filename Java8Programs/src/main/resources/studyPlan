@@ -1,0 +1,90 @@
+✅ 3-Month Study Plan (Backend + Cloud + DSA)
+🔁 Weekly Plan Overview
+Day	Focus Area
+Mon	Spring Boot + Java Backend
+Tue	DSA Practice (Java)
+Wed	Cloud (AWS/Azure)
+Thu	DSA Practice + Recap
+Fri	Docker + CI/CD + DevOps
+Sat	Project work + DSA
+Sun	Optional / Resume / Review
+
+📅 Month 1: Backend + Java Refresh + DSA Basics
+🎯 Backend
+Java 8+ (Streams, Collections, Lambdas)
+
+Spring Boot CRUD App
+
+DB Integration (MySQL/PostgreSQL)
+
+REST API, Exception Handling
+
+Profiles, Logging (SLF4J), Unit Tests
+
+🎯 DSA
+Arrays, Strings, Linked List
+
+Stack, Queue, HashMap
+
+Sorting Algorithms (Bubble, Merge, Quick)
+
+LeetCode/Easy & Medium (10–12 problems/week)
+
+Project: Bookstore or User Management API
+
+📅 Month 2: Microservices + Docker + Cloud + DSA Intermediate
+🎯 Backend/Cloud
+Microservices (Eureka, Config Server)
+
+Docker + Docker Compose
+
+Cloud (AWS EC2, S3, RDS) OR Azure App Services
+
+CI/CD with GitHub Actions or Jenkins
+
+🎯 DSA
+Sliding Window, Two Pointers
+
+Recursion & Backtracking
+
+Binary Search, Trees (BST/Binary)
+
+LeetCode Medium (15–18 problems/week)
+
+Mini-Project: Product + Order microservices (REST + Dockerized + Deployed)
+
+📅 Month 3: Real Project + System Design + Advanced DSA (Optional)
+🎯 Backend/Cloud
+Build a real-world microservice project (Job Portal, Expense Tracker)
+
+Secure API with JWT/OAuth2
+
+Deploy on cloud with Docker/Kubernetes (if time permits)
+
+Learn logs/monitoring with CloudWatch or Azure Monitor
+
+🎯 DSA
+Graphs (BFS, DFS, Dijkstra)
+
+Dynamic Programming (LIS, Knapsack)
+
+Heaps, Greedy, Tries (optional if applying to product companies)
+
+15–20 problems/week
+
+🎯 Final Prep
+Resume polishing + GitHub cleanup
+
+Prepare project explanation + system design basics
+
+Mock interviews + company-specific DSA
+
+✅ Outcome by End of 3 Months
+✅ 2 Java/Spring Boot backend projects (Dockerized + Deployed)
+
+✅ Knowledge of Cloud (AWS or Azure) & CI/CD pipelines
+
+✅ Comfortable with 80–100 DSA problems (focused on Java)
+
+✅ Resume + GitHub ready
+
