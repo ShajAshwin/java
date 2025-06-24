@@ -16,7 +16,7 @@ java:
 14. Differentiate between the constructors and methods in Java?
 15. difference between static and final keyword
 16. Difference between String, StringBuilder, and StringBuffer.
-17. how to convert arrays to list
+17. how to convert arrays to list4
 18. What is encapsulation in Java?
 19. What are the steps to connect to a database in java?
 20. how to create junit

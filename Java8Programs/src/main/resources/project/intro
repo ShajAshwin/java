@@ -1,0 +1,29 @@
+✅ 1. Self Introduction (Java Developer with Spring Boot Experience)
+“Hi, my name is Shaj Ashwin. I have around 4 years of experience in Java development,
+primarily working with Java 8, Spring Boot, Spring Data JPA, and REST APIs.
+
+I’ve also worked with tools like Jenkins for CI/CD, Nginx for API Gateway configuration, and Splunk for log monitoring.
+I’ve contributed to both feature development and automation initiatives, where I wrote scripts to auto-generate Nginx configurations
+from CSV inputs and validate them against business rules.
+
+In my recent role, I worked on backend microservices development, building resilient services using Resilience4j,
+implementing Retry, Timeout, and Circuit Breaker patterns.
+
+I’m currently upskilling myself in microservices architecture and preparing for more development-focused roles.”
+
+✅ 2. Project Explanation (Fake or Real - Payment Resilience Project)
+“In my most recent project, I worked on a Payment Resilience System for a financial services application.
+The goal was to ensure high availability and robustness of our payment processing APIs.
+
+We used Spring Boot to build microservices that interact with third-party payment gateways.
+To handle failures and ensure resilience, we integrated Resilience4j and implemented:
+
+Retry: Automatically retry failed API calls up to 3 times.
+Timeout: Fail requests if no response is received within 3 seconds.
+Circuit Breaker: If a gateway fails consistently, we stop sending requests temporarily to allow recovery.
+Fallbacks: Provided backup payment options for users.
+
+We also simulated downstream failures and logged them using Splunk for observability.
+Nginx acted as our API gateway, and we used Jenkins pipelines for deployment.
+
+This project helped reduce payment failures by 40% and significantly improved user trust in the platform.”

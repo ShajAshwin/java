@@ -20,9 +20,8 @@ public class Practice {
 
         Set<Integer> set = new HashSet<>();
 
-        fruits.stream()
-                .min(Comparator.comparing(String::length))
-                .ifPresent(System.out::println);
+
+
     }
 
 }

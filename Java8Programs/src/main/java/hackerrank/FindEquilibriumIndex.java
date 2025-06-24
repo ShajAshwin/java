@@ -1,4 +1,4 @@
-package core;
+package hackerrank;
 
 public class FindEquilibriumIndex {
 

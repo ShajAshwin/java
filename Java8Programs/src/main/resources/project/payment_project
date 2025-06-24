@@ -15,7 +15,6 @@ Bulkhead	    Isolate resource pools to prevent system-wide failure	Limit the num
 
 🔹 Tools:
 Resilience4j – Lightweight resilience library (recommended over Hystrix)
-
 Spring Cloud Circuit Breaker – Spring wrapper for Resilience4j
 
 Splunk – Log and monitor failed transactions
