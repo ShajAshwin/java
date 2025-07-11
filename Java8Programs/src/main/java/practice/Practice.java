@@ -17,8 +17,9 @@ public class Practice {
         List<String> fruits = Arrays.asList("Apple", "Mango", "Grapes", "Banana","pineapple");
         int arr[] = { 99, 55, 203, 99, 4, 91 };
         String string = "GloomySunday";
+        List<String> strings = Arrays.asList("user", "users", "uses", "us");
 
-        Set<Integer> set = new HashSet<>();
+
 
 
 
