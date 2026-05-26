@@ -1,0 +1,118 @@
+✅ 1.OOPS concept
+
+1)What are the four pillars of OOPS?
+2)What is the difference between abstraction and encapsulation?
+3)What is method overloading and method overriding?
+4)What is runtime and compile-time polymorphism?
+5)Can you override a private or static method?
+6)What is the use of super keyword?
+7)What is the difference between this and super?
+8)What is a constructor? Types of constructors?
+9)What is the use of the final keyword (class, method, variable)?
+
+✅ 2. Java Basics
+Explain the Java execution process (source to JVM).
+Difference between JDK, JRE, and JVM.
+What is bytecode?
+How is Java platform independent?
+What are primitive vs non-primitive types?
+Why is Java not 100% object-oriented?
+Difference between == and .equals()?
+
+✅ 3. Data Types & Operators
+What are the different data types in Java?
+What is type casting? Types of casting?
+What are wrapper classes in Java?
+What is autoboxing and unboxing?
+
+✅ 4. Control Statements
+Difference between break, continue, and return?
+How does switch work internally?
+Can switch work with strings and enums?
+
+✅ 5. Strings
+Difference between String, StringBuffer, and StringBuilder?
+How are strings stored in memory (String pool)?
+Why are Strings immutable?
+What is intern() method?
+How to reverse a string without using reverse()?
+
+✅ 6. Arrays and Collections
+How do you declare and initialize an array?
+Difference between array and ArrayList?
+What is the Collection framework?
+Differences between List, Set, and Map?
+Differences: ArrayList vs LinkedList
+Differences: HashSet vs TreeSet vs LinkedHashSet
+Differences: HashMap vs TreeMap vs LinkedHashMap
+How does HashMap work internally?
+What is the load factor and threshold in HashMap?
+What is fail-fast vs fail-safe iterator?
+What is ConcurrentModificationException?
+
+✅ 7. Exception Handling
+Difference between checked and unchecked exceptions?
+Can we catch multiple exceptions in one block?
+What is the difference between throw and throws?
+What is finally block used for?
+Can finally block override return statement?
+How to create a custom exception?
+
+✅ 8. Multithreading & Concurrency
+What is a thread in Java?
+Difference between Thread and Runnable?
+What is synchronization? Why is it needed?
+What is the use of volatile keyword?
+What is the difference between wait() and sleep()?
+What is thread starvation and deadlock?
+What is the Executor framework?
+What are atomic operations in Java?
+
+✅ 9. Java 8 Features
+What are lambda expressions?
+What are functional interfaces?
+What is the use of the @FunctionalInterface annotation?
+Difference between map() and flatMap() in Streams?
+What is the Optional class and why is it used?
+What is method reference (::)?
+What is Stream API and its use cases?
+What is the difference between intermediate and terminal operations in Stream?
+
+✅ 10. Access Modifiers
+Difference between private, protected, public, and default?
+Can you access private variables outside a class?
+
+✅ 11. Keywords & Modifiers
+What is the use of static keyword?
+What is transient and when do you use it?
+What is volatile in multithreading?
+What is synchronized and how does it work?
+
+✅ 12. Memory Management & GC
+How does memory management work in Java?
+What are the different memory areas in JVM?
+How does garbage collection work?
+What is the use of finalize() method?
+What are strong, weak, and soft references?
+
+✅ 13. Java Reflection, Annotations (Advanced)
+What is reflection in Java?
+How do you access private fields using reflection?
+What are annotations in Java?
+How do custom annotations work?
+
+✅ 14. Serialization
+What is serialization?
+How to make a class serializable?
+Difference between Serializable and Externalizable?
+
+✅ 15. Java Best Practices (Asked by Product Companies)
+What are immutable objects? How to create them?
+
+How do you avoid NullPointerException?
+
+Why should hashCode and equals be overridden together?
+
+What is defensive copying?
+
+How do you write thread-safe code?

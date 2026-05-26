@@ -1,0 +1,122 @@
+JWT AUTHENTICATION FLOW
+
+JWT TOKEN STRUCTURE:
+
+  +──────────────────────+   .   +──────────────────────+   .   +──────────────────────+
+  │       HEADER         │       │       PAYLOAD        │       │      SIGNATURE       │
+  │──────────────────────│       │──────────────────────│       │──────────────────────│
+  │  Algorithm type      │       │  User data (JSON)    │       │  Hash of:            │
+  │  e.g. HS256          │       │  userId, role, exp   │       │  Header + Payload    │
+  │  Token type: JWT     │       │  + any custom claims │       │  + secret key        │
+  +──────────────────────+       +──────────────────────+       +──────────────────────+
+
+STEP 1:
+
+             POST /login
+  +--------+  ──────────────>  +──────────────────────+  ──────────────>  +─────────────────────+
+  │        │                   │   Auth Controller    │                   │   Token Generator   │
+  │ Client │                   │ Validates credentials│                   │  Signs + sets expiry│
+  │        │                   +──────────────────────+                   +─────────────────────+
+  +--------+                                                                     |
+      ^                                                                          |
+      │                    JWT token returned                                    |
+      └──────────────────────────────────────────────────────────────────────────|
+Token format:  Base64(Header) . Base64(Payload) . Signature
+
+
+
+ STEP 2 — Protected API Request:
+
+
+                        Authorization: Bearer <token>
+  +──────────────+  ──────────────────────────────────>   +──────────────────+
+  │    Client    │                                        │    JWT Filter    │
+  │ (has token)  │                                        │ (intercepts all) │
+  +──────────────+                                        +──────────────────+
+                                                                  │
+                                                                  │
+                                              ┌───────────────────┴────────────────────┐
+                                              │          Is it a public route?         │
+                                              │          (e.g. /swagger-ui)            │
+                                              └───────────────────┬────────────────────┘
+                                                                  │
+                                        YES ◄─────────────────────┴─────────────────────► NO
+                                         │                                                │
+                                         ▼                                                ▼
+                              +──────────────────+                           +────────────────────+
+                              │   Public API     │                           │  Validate Token     │
+                              │  (allow through) │                           │  Verify signature   │
+                              +──────────────────+                           │  Check expiry       │
+                                                                             +────────────────────+
+                                                                                       │
+                                                              ┌────────────────────────┴──────────────────────┐
+                                                              │          Valid & not expired?                 │
+                                                              └────────────────────────┬──────────────────────┘
+                                                                                       │
+                                                     VALID ◄───────────────────────────┴──────────────────► INVALID / EXPIRED
+                                                       │                                                              │
+                                                       ▼                                                              ▼
+                                          +─────────────────────────+                               +────────────────────────────+
+                                          │  Protected Controller   │                               │     401 Unauthorized       │
+                                          │   Handles the request   │                               │     Request rejected       │
+                                          +─────────────────────────+                               +────────────────────────────+
+                                                       │
+                                                       ▼
+                                          +─────────────────────────+
+                                          │        200 OK           │
+                                          │   Response returned     │
+                                          +─────────────────────────+
+
+
+SUMMARY:
+  1. Client sends credentials  -->  POST /login
+  2. Auth Controller validates credentials
+  3. Token Generator creates JWT  (Header . Payload . Signature)  with expiry
+  4. JWT token returned to client
+  5. Client attaches token to every request  -->  Authorization: Bearer <token>
+  6. JWT Filter intercepts the request
+       ├── Public route (e.g. /swagger-ui)  -->  Allow through directly
+       └── Protected route                  -->  Validate token
+             ├── Valid & not expired        -->  Forward to Controller  -->  200 OK
+             └── Invalid / expired          -->  401 Unauthorized
+
+INTERVIEW QUESTIONS:
+
+🟢 Beginner
+What is JWT and why is it used?
+What are the three parts of a JWT token?
+What is the difference between authentication and authorization?
+Where do you store a JWT on the client side? (localStorage vs cookie)
+What does the exp claim mean in the payload?
+Is JWT encrypted? Can anyone read the payload?
+What HTTP header is used to send a JWT to the server?
+
+🟡 Intermediate
+What is the difference between JWT and session-based authentication?
+What happens when a JWT token expires? How does the client handle it?
+What is a refresh token and how does it work with an access token?
+What signing algorithms does JWT support? What is the difference between HS256 and RS256?
+How does the JWT filter decide if a route is public or protected?
+What claims are standard in JWT? (iss, sub, aud, exp, iat)
+Can you invalidate a JWT before it expires? How?
+What is the difference between iat (issued at) and exp (expiry)?
+
+
+🔴 Advanced
+What are the security risks of storing JWT in localStorage vs HttpOnly cookies?
+What is a JWT blacklist and when would you use it?
+How would you implement token rotation with refresh tokens?
+What is the none algorithm vulnerability in JWT?
+How does RS256 (asymmetric) signing improve security over HS256 (symmetric)?
+How do you handle JWT in a microservices architecture?
+What is the difference between stateless JWT and stateful sessions — and when would you choose sessions over JWT?
+How would you revoke a refresh token?
+
+
+💻 Scenario / Practical
+A user logs out — how do you invalidate their JWT?
+Your JWT secret key got leaked — what do you do?
+How would you implement role-based access control (RBAC) using JWT claims?
+A user's token is stolen — how do you detect and prevent misuse?
+How would you refresh a token silently in the background without the user noticing?
+

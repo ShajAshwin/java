@@ -24,7 +24,8 @@ Return deep copies of mutable objects in getters instead of returning original r
 
 Why String is immutable in Java 
 For example, database username, password are passed as String to get database connection and in socket programming host and port details passed as String.
-Since String is immutable, its value can't be changed otherwise any hacker could change the referenced value to cause security issues in the application
+Since String is immutable, its
+value can't be changed otherwise any hacker could change the referenced value to cause security issues in the application
 
 StringBuffer vs StringBuilder
 1)	StringBuffer is synchronized i.e. thread safe. It means two threads can't call the methods of StringBuffer simultaneously.	StringBuilder is non-synchronized i.e. not thread safe. It means two threads can call the methods of StringBuilder simultaneously.
@@ -54,7 +55,7 @@ Used in collections (Set, List) and searching operations.
 	Ans: Yes. But we have to override Hashcode and equals
 5. Collision handled in HashMap
 6. Custom Exception
-public class WrongFileNameException extends Exception {  
+public class WrongFileNameException extends Exception or implement runnable {
     public WrongFileNameException(String errorMessage) {  
     super(errorMessage);  
     }  
@@ -149,11 +150,11 @@ Object-Oriented Programming (OOP) is based on four key principles:
 ✔ Interfaces (Full abstraction)
 
 3️⃣ Inheritance (Code Reusability)
-🔹 Types of Inheritance in Java
-✔  Single Inheritance → One class inherits another.
-✔  Multilevel Inheritance → Class B inherits A, and Class C inherits B.
+🔹  Types of Inheritance in Java
+✔  Single Inheritance       → One class inherits another.
+✔  Multilevel Inheritance   → Class B inherits A, and Class C inherits B.
 ✔  Hierarchical Inheritance → One parent has multiple child classes.
-❌  Multiple Inheritance → Not supported in Java with classes (but possible with interfaces).
+❌  Multiple Inheritance     → Not supported in Java with classes (but possible with interfaces).
 
 4️⃣ Polymorphism (Method Overloading & Overriding)
 ✔ Method Overloading(Compile-time Polymorphism)
@@ -476,7 +477,7 @@ Can have fields?	              ✅ Yes (not final by default)	        ✅ Yes (p
 Can have abstract methods?	      ✅ Yes	                            ✅ Yes
 Can have concrete methods?	      ✅ Yes	                            ✅ Yes (default and static from Java 8)
 Supports multiple inheritance?	  ❌ No (only single inheritance)	    ✅ Yes
-Access modifiers	              Can be private, protected, or public	Methods are public by default
+Access modifiers	              Can be private, protected or public	Methods are public by default
 
 
 
