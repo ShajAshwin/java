@@ -120,3 +120,61 @@ How would you implement role-based access control (RBAC) using JWT claims?
 A user's token is stolen — how do you detect and prevent misuse?
 How would you refresh a token silently in the background without the user noticing?
 
+
+OAuth 2.0:
+
+Steps 1–5 (front-channel — browser visible):
+
+User clicks "Login with Google" on your app
+Your app redirects to Google's /authorize with the scope it needs
+Google shows the consent screen
+User approves → Google redirects back with a short-lived auth code
+
+Steps 6–7 (back-channel — server to server, user can't see this):
+
+Your backend secretly exchanges the auth code + client secret for tokens
+Google returns an access token (JWT!) and a refresh token
+This is done server-side so the client secret is never exposed to the browser
+
+Steps 8–10 (using the token — same as your JWT flow!):
+
+Your app calls the API with Authorization: Bearer <token>
+Resource server validates the JWT signature
+Returns the protected data
+
+What problem does OAuth solve?
+JWT handles your own app's login.
+OAuth handles "Login with Google / GitHub / Facebook" — i.e. letting a third-party app access your data without giving them your password.
+Without OAuth:  "Give Gmail your Facebook password to import contacts"  ❌
+With OAuth:     "Facebook asks YOU to approve Gmail's access"           ✅
+
+OAuth Learning Roadmap
+🟢 Level 1 — Core Concepts
+
+What is OAuth 2.0 and what problem it solves
+OAuth roles — Resource Owner, Client, Authorization Server, Resource Server
+What is an Authorization Code
+What is an Access Token (this is where JWT comes back in)
+What is a Scope (e.g. read:email, write:calendar)
+
+🟡 Level 2 — Grant Types (most important)
+
+Authorization Code Flow ← most common, learn this first
+Client Credentials Flow ← for machine-to-machine (no user)
+Implicit Flow ← deprecated, but asked in interviews
+Resource Owner Password Flow ← also deprecated
+
+🔴 Level 3 — Advanced
+
+PKCE (Proof Key for Code Exchange) — secure OAuth for mobile/SPAs
+OpenID Connect (OIDC) — OAuth + identity layer (adds who you are, not just access)
+Token introspection & revocation
+Difference between OAuth 2.0 and OAuth 2.1
+
+
+How JWT fits into OAuth
+OAuth handles:   WHO grants access and WHAT is allowed (scopes)
+JWT is used as:  The actual Access Token that carries this info
+
+Authorization Server  ──►  issues a JWT Access Token
+Resource Server       ──►  validates that JWT (just like your JWT filter!)
