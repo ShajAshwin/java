@@ -1,5 +1,6 @@
-package java8;
+package codeDecode.java8;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -18,7 +19,6 @@ public class primeNumber {
 
     Map<Boolean, List<Integer>> list = Arrays.stream(arr).boxed()
             .collect(Collectors.partitioningBy(num -> num % 2 == 0));
-
 
     System.out.println(list.get(true));
 

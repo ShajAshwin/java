@@ -1,0 +1,64 @@
+1. Basic Spring Boot Questions
+1)What is Spring Boot? How is it different from Spring Framework?
+Spring Boot is an extension of the Spring Framework that simplifies the development of Java-based applications by providing:
+✅ Auto-configuration – Automatically configures beans based on project dependencies.
+✅ Standalone applications – No need for external servers like Tomcat; it comes with an embedded server.
+✅ Opinionated defaults – Reduces boilerplate code by providing sensible defaults.
+✅ Production-ready features – Includes monitoring, health checks, and logging via Spring Boot Actuator.
+✅ Microservices support – Makes it easier to build and deploy microservices.
+
+2)Why Use Spring Boot?
+Saves Development Time – Less configuration, more focus on business logic.
+Easier to Deploy – No need for external server setup.
+Microservices-Friendly – Works well with Spring Cloud for distributed applications.
+Production-Ready – Built-in security, monitoring, and logging support.
+
+3)What are the advantages of using Spring Boot?
+4)Explain the Spring Boot architecture.
+5)What is the difference between @Component, @Service, and @Repository annotations?
+What is the purpose of @SpringBootApplication?
+How does Spring Boot handle dependency management?
+What are starters in Spring Boot? Name some commonly used starters.
+What is an embedded server? Which servers are supported by Spring Boot?
+How do you configure an external Tomcat server with Spring Boot?
+What is the difference between application.properties and application.yml?
+
+
+
+2. Spring Boot Annotations & Configuration
+What is the difference between @RestController and @Controller?
+How does @Autowired work in Spring Boot?
+What is the purpose of @Qualifier and @Primary?
+What is the use of @Configuration, @Bean, and @ComponentScan?
+What is the difference between @RequestMapping and @GetMapping?
+How does Spring Boot handle exception handling (@ControllerAdvice, @ExceptionHandler)?
+What is @Transactional, and how does it work in Spring Boot?
+How do you enable scheduling in Spring Boot?
+What is the purpose of @Value annotation?
+What is the difference between @Scope("singleton") and @Scope("prototype")?
+
+
+3. Spring Boot JPA & Database Questions
+What is Spring Boot JPA? How does it differ from Hibernate?
+What is CrudRepository, JpaRepository, and PagingAndSortingRepository?
+How do you define custom queries in Spring Data JPA?
+What is the difference between @OneToOne, @OneToMany, and @ManyToMany?
+How do you handle transactions in Spring Boot?
+How do you implement pagination in Spring Boot JPA?
+What is EntityManager and how does it work in Spring Boot?
+How do you configure multiple data sources in Spring Boot?
+What is Lazy vs Eager loading in JPA?
+How do you handle database migrations in Spring Boot (Flyway, Liquibase)?
+
+
+4. Spring Boot Microservices Questions
+What are microservices? How is Spring Boot used for building microservices?
+What is Spring Cloud, and how does it help in microservices?
+What is Eureka Server, and how does it work?
+How do you implement API Gateway in Spring Boot?
+What is circuit breaker in microservices? How does Resilience4J work?
+What is @FeignClient, and how does it help in microservices communication?
+What is the difference between synchronous and asynchronous communication in microservices?
+How do you secure microservices using JWT?
+What is the role of Config Server in Spring Boot?
+What are the different ways to communicate between microservices?

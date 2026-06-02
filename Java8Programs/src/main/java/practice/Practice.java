@@ -14,11 +14,10 @@ public class Practice {
         List<Integer> list = Arrays.asList(10,15,8,49,25,98,32,4,8,15);
         List<Integer> list2 = Arrays.asList(1,3,5,7,8,9,2,3,8);
         List<String> names = Arrays.asList("AA", "BB", "AA", "CC");
-        List<String> fruits = Arrays.asList("Apple", "Mango", "Grapes", "Banana","pineapple");
         int arr[] = { 99, 55, 203, 99, 4, 91 };
         String string = "GloomySunday";
-        List<String> strings = Arrays.asList("user", "users", "uses", "us");
 
+        List<String> cr = Arrays.asList("red","yellow","blue","green");
 
 
 

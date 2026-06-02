@@ -139,6 +139,28 @@ Yes
 
 3)How does diamond problem get resolved in Java 8?
 If a class implements two interfaces with the same default method, it must override it. This is called diamond problem
+1️⃣ Override the Method in the Class
+2️⃣ Use InterfaceName.super.method()
+
+interface A {
+    default void show() {
+        System.out.println("A's show");
+    }
+}
+
+interface B {
+    default void show() {
+        System.out.println("B's show");
+    }
+}
+
+class C implements A, B {
+    public void show() {
+        A.super.show(); // or B.super.show(); - you have to specify
+    }
+}
+
+
 
 4)What are static methods in interfaces?
 Java 8 introduced static methods in interfaces, allowing interfaces to have methods with a body that cannot be overridden by implementing classes.

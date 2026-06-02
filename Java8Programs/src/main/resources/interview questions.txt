@@ -1,5 +1,4 @@
 java:
-
 1. Difference between interface and abstract
 2. what is inheritance
 3. how to start and stop the thread

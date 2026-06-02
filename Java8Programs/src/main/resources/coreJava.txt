@@ -24,7 +24,8 @@ Return deep copies of mutable objects in getters instead of returning original r
 
 Why String is immutable in Java 
 For example, database username, password are passed as String to get database connection and in socket programming host and port details passed as String.
-Since String is immutable, its value can't be changed otherwise any hacker could change the referenced value to cause security issues in the application
+Since String is immutable, its
+value can't be changed otherwise any hacker could change the referenced value to cause security issues in the application
 
 StringBuffer vs StringBuilder
 1)	StringBuffer is synchronized i.e. thread safe. It means two threads can't call the methods of StringBuffer simultaneously.	StringBuilder is non-synchronized i.e. not thread safe. It means two threads can call the methods of StringBuilder simultaneously.
@@ -54,7 +55,7 @@ Used in collections (Set, List) and searching operations.
 	Ans: Yes. But we have to override Hashcode and equals
 5. Collision handled in HashMap
 6. Custom Exception
-public class WrongFileNameException extends Exception {  
+public class WrongFileNameException extends Exception or implement runnable {
     public WrongFileNameException(String errorMessage) {  
     super(errorMessage);  
     }  
@@ -149,11 +150,11 @@ Object-Oriented Programming (OOP) is based on four key principles:
 ✔ Interfaces (Full abstraction)
 
 3️⃣ Inheritance (Code Reusability)
-🔹 Types of Inheritance in Java
-✔  Single Inheritance → One class inherits another.
-✔  Multilevel Inheritance → Class B inherits A, and Class C inherits B.
+🔹  Types of Inheritance in Java
+✔  Single Inheritance       → One class inherits another.
+✔  Multilevel Inheritance   → Class B inherits A, and Class C inherits B.
 ✔  Hierarchical Inheritance → One parent has multiple child classes.
-❌ Multiple Inheritance → Not supported in Java with classes (but possible with interfaces).
+❌  Multiple Inheritance     → Not supported in Java with classes (but possible with interfaces).
 
 4️⃣ Polymorphism (Method Overloading & Overriding)
 ✔ Method Overloading(Compile-time Polymorphism)
@@ -446,6 +447,37 @@ Examples of Marker Interfaces in Java
       Marks a class as cloneable so that the Object.clone() method can be used.
 3.Remote (java.rmi.Remote)
       Marks a class as a remote object for RMI (Remote Method Invocation).
+
+
+31.Abstract class in Java
+An abstract class in Java is a class that cannot be instantiated and is meant to be extended by subclasses.
+It can have both abstract methods (methods without a body) and concrete methods (methods with a body).
+
+When to Use Abstract Classes?
+When you want to define a base class with common functionality but ensure subclasses provide specific implementations.
+When some methods must be overridden, but others can be shared.
+If you expect to add new behaviors in the future.
+
+
+32.Interface in Java
+An interface in Java is a blueprint for classes that defines a set of methods without implementation (before Java 8).
+It allows multiple classes to implement the same behavior while maintaining flexibility.
+From Java 8, interfaces can have default methods (with implementation) and static methods.
+
+When to Use an Interface?
+When multiple classes should follow a common behavior but are not related hierarchically.
+When you need multiple inheritance (since Java does not allow multiple class inheritance).
+When defining a contract that multiple classes should adhere to.
+
+33. Abstract Class vs Interface
+
+Feature	                          Abstract Class	                    Interface
+Can have constructors?	          ✅ Yes	                            ❌ No
+Can have fields?	              ✅ Yes (not final by default)	        ✅ Yes (public static final by default)
+Can have abstract methods?	      ✅ Yes	                            ✅ Yes
+Can have concrete methods?	      ✅ Yes	                            ✅ Yes (default and static from Java 8)
+Supports multiple inheritance?	  ❌ No (only single inheritance)	    ✅ Yes
+Access modifiers	              Can be private, protected or public	Methods are public by default
 
 
 
