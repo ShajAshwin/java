@@ -1,0 +1,73 @@
+📌 SQL
+
+• Nth Highest Salary
+• Department-wise Highest Salary
+• Remove Duplicate Records
+• Find Duplicate Rows
+• Employees Having Same Salary
+• WHERE vs HAVING
+• INNER JOIN vs LEFT JOIN
+• Pagination using LIMIT/OFFSET
+• Window Functions (ROW_NUMBER, RANK, DENSE_RANK)
+• Count Employees Department-wise
+
+📌 Java & Stream API
+
+• Top 3 Highest Salaries from Employee List
+• Group Employees by Department
+• Convert List to Map
+• Find Duplicate Elements
+• First Non-Repeated Character
+• Character Frequency Count
+• Sort Employees using Comparator
+• Remove Duplicates using Streams
+• Reverse Words in a String
+• Longest Substring Without Repeating Characters
+
+📌 Collections & Coding
+
+• Merge Two Sorted Arrays
+• Array Intersection
+• Balanced Parentheses
+• LRU Cache
+• Immutable Class Design
+• Custom HashMap Internal Working
+
+📌 Multithreading
+
+• Producer Consumer Problem
+• Thread-safe Singleton
+• Deadlock Scenario
+• CompletableFuture Coding
+• ExecutorService Usage
+• ConcurrentHashMap vs HashMap
+• Volatile vs Synchronized
+
+📌 Spring Boot & Microservices
+
+• Retry Failed API Calls
+• Global Exception Handling
+• JWT Authentication
+• @Transactional Internal Working
+• API Gateway
+• Circuit Breaker
+• Pagination APIs
+• Rate Limiter Design
+• Idempotency Handling
+
+📌 Kafka
+
+• Consumer Group Rebalancing
+• Duplicate Message Handling
+• Message Ordering
+• Offset Management
+• Kafka vs RabbitMQ
+• Consumer Crash Scenarios
+
+📌 System Design
+
+• URL Shortener
+• Notification Service
+• Payment System Design
+• Distributed Cache
+• Rate Limiter Design

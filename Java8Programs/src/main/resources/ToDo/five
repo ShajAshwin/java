@@ -1,0 +1,17 @@
+Because interviewers are now asking things like:
+
+1. Your API works perfectly locally but becomes slow only in production. What would you check first?
+2. Kafka consumers are running normally, but message lag keeps increasing. Why can this happen?
+3. Database connections suddenly get exhausted during peak traffic. What could cause this?
+4. Autoscaling creates more pods, but response time still keeps increasing.
+5. Retry logic starts creating duplicate payment transactions during failures.
+6. A scheduled job suddenly starts executing multiple times after scaling.
+7. One slow downstream service starts affecting the entire platform.
+8. APIs randomly return 500 errors, but infrastructure looks healthy.
+9. Health checks pass, but users still face failures.
+10. Cache improves performance initially, but later starts returning stale data.
+11. Logs exist everywhere, but debugging across services is still difficult.
+12. JVM memory usage slowly increases after every deployment.
+13. APIs work in staging but fail behind the production gateway.
+14. Thread pools become exhausted even though CPU usage is stable.
+15. Circuit breakers are configured, but cascading failures still happen.

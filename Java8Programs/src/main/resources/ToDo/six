@@ -1,0 +1,25 @@
+◆ Reverse a String without using built-in methods.
+◆ Check whether a String is Palindrome or not.
+◆ Find the first non-repeating character in a String.
+◆ Find the second non-repeating character in a String.
+◆ Find duplicate characters in a String.
+◆ Count the frequency of each character in a String using HashMap.
+◆ Check whether two Strings are Anagrams.
+◆ Remove duplicate characters from a String.
+◆ Reverse words in a sentence.
+◆ Count vowels and consonants in a String.
+◆ Find the missing number in an Array.
+◆ Find the largest and second largest number in an Array.
+◆ Find duplicate numbers in an Array.
+◆ Remove duplicates from an Array.
+◆ Move all zeros to the end of an Array.
+◆ Find the intersection of two Arrays.
+◆ Check whether an Array is sorted or not.
+◆ Find pairs in an Array whose sum is equal to a given target.
+◆ Find the maximum sum subarray.
+◆ Rotate an Array by K positions.
+◆ Find the factorial of a number using recursion.
+◆ Print Fibonacci series.
+◆ Check whether a number is Prime or not.
+◆ Swap two numbers without using a third variable.
+◆ Implement a simple LRU Cache using LinkedHashMap.

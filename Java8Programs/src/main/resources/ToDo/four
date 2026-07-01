@@ -1,0 +1,101 @@
+Core Java
+
+• Explain JVM Memory Management (Heap, Stack, Metaspace, GC)
+
+• What is a Memory Leak? How do you identify it in Production?
+
+• HashMap vs ConcurrentHashMap
+
+• How does ConcurrentHashMap handle concurrent updates?
+
+• What happens if both "try" and "finally" have a return statement?
+
+• Can we use "finally" without "catch"?
+
+• Explain Polymorphism with Parent and Child class examples.
+
+• Static Method Hiding vs Method Overriding
+
+• Which Design Patterns have you used in your project?
+
+Java 8
+
+• Features of Java 8 used in your project
+
+• Stream API
+
+• Intermediate vs Terminal Operations
+
+• map() vs flatMap()
+
+• Lambda Expressions
+
+• Optional Class and its use cases
+
+Spring Boot
+
+• Difference between @Component, @Service and @Repository
+
+• If we interchange these annotations, will the application still work?
+
+• Global Exception Handling using @ControllerAdvice
+
+• Filters vs Interceptors
+
+• Parent POM vs Dependency POM
+
+Microservices
+
+• How do Microservices communicate with each other?
+
+• Synchronous vs Asynchronous Communication
+
+• What is Saga Pattern?
+
+• How does rollback happen in Saga?
+
+• Circuit Breaker Pattern and its advantages
+
+Security
+
+• How does JWT Authentication work?
+
+• From where does the JWT Token come?
+
+• How is JWT Token validated?
+
+• JWT Signing Algorithm and Secret Key
+
+• JWT Validation at API Gateway or Service Level?
+
+• Keycloak Integration in Microservices
+
+Database & Performance
+
+• API is slow. How will you troubleshoot it?
+
+• How do you identify bottlenecks in a service?
+
+• Why can repo.findAll() become slow?
+
+• What indexing strategies help improve performance?
+
+Docker & Kubernetes
+
+• Dockerization steps for a Spring Boot application
+
+• JAR → Docker Image → Container flow
+
+• Kubernetes basics
+
+• Embedded Tomcat vs JBoss
+
+• How to deploy Spring Boot applications on Kubernetes?
+
+Coding Questions
+
+• Move all zeroes to the right side of an array in O(n)
+
+• Java Inheritance Output-Based Questions
+
+• String and Collection-based coding scenarios

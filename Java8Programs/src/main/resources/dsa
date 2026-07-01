@@ -1,0 +1,14 @@
+DSA important question
+
+1) Sliding Window  --> 3,76,424, 904
+2) Two Pointers    --> 11, 15, 167, 42
+3) Binary Search   --> 33, 153, 875, 1011
+4) Hashing+Prefix  --> 1, 49, 560, 128
+5) Monotonic Stack --> 739, 503, 84, 901
+6) Heap(Top K)     --> 215, 347, 973, 703
+7) Intervals       --> 56, 435, 57, 252
+8) BFS/DFS         --> 200, 994, 102, 133
+9) Trees           --> 104, 236, 543, 124
+10) DP basic       --> 70, 198, 322, 300
+
+Sheet --> https://www.risingbrain.org/sheet

@@ -1,0 +1,46 @@
+𝗖𝗼𝗿𝗲 𝗝𝗮𝘃𝗮 & 𝗟𝗮𝗻𝗴𝘂𝗮𝗴𝗲 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀:
+1. Java 17 features
+2. var keyword and its limitations
+3. Effectively final variables
+4. Record class and data handling
+5. Optional class
+6. Checked exceptions
+7. Exception handling & Controller Advisor
+8. Reverse a string without predefined methods
+9. Mutable keys in HashMap
+
+𝗜𝗻𝘁𝗲𝗿𝗳𝗮𝗰𝗲𝘀 & 𝗢𝗢𝗣:
+10. Private methods in interfaces
+11. Types of interface methods
+12. Default method conflict resolution
+13. SOLID principles
+14. Liskov Substitution Principle
+15. Factory Design Pattern
+
+𝗖𝗼𝗻𝗰𝘂𝗿𝗿𝗲𝗻𝗰𝘆 & 𝗠𝘂𝗹𝘁𝗶𝘁𝗵𝗿𝗲𝗮𝗱𝗶𝗻𝗴:
+16. synchronized vs ReentrantLock
+17. volatile keyword
+18. volatile vs Atomic classes
+19. CompletableFuture
+
+Streams & Functional Programming:
+20. Stream vs Parallel Stream
+21. Stream vs flatMap
+
+𝗦𝗽𝗿𝗶𝗻𝗴 𝗙𝗿𝗮𝗺𝗲𝘄𝗼𝗿𝗸 & 𝗦𝗽𝗿𝗶𝗻𝗴 𝗕𝗼𝗼𝘁:
+22. Spring Container internals
+23. Bean Lifecycle
+24. @EnableAutoConfiguration
+25. @Primary vs @Qualifier
+26. IoC vs Dependency Injection
+27. Types of Dependency Injection
+28. Spring Profiles
+29. Path Variable vs Request Parameter
+30. @Transactional
+31. Lazy Loading vs Eager Loading
+
+𝗦𝗽𝗿𝗶𝗻𝗴 𝗦𝗲𝗰𝘂𝗿𝗶𝘁𝘆 & 𝗝𝗪𝗧:
+32. Spring Security fundamentals
+33. Spring Security implementation
+34. Security in distributed microservices
+35. JWT authentication
